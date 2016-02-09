@@ -14,4 +14,4 @@ files.
 
 ### License
 This program is licensed under a '3-clause BSD License' please see the
-[Lincense file](LICENSE) for details.
+[License file](LICENSE) for details.
