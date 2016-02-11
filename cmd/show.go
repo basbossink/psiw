@@ -32,6 +32,8 @@ package cmd
 
 import "github.com/spf13/cobra"
 
+var csvOutput string
+
 var showCmd = &cobra.Command{
 	Use:   "show",
 	Short: "The show command, gives you insight into the current structure of your project.",
@@ -44,4 +46,6 @@ It can summarize the way your project is structured:
 
 func init() {
 	RootCmd.AddCommand(showCmd)
+	showCmd.PersistentFlags().StringP("csv-out", "c", "",
+		"An optional name for a file to use to generate the output as a list of comma seperated values.")
 }

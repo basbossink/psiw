@@ -39,30 +39,21 @@ import (
 // file-system-summaryCmd represents the file-system-summary command
 var fileSystemSummaryCmd = &cobra.Command{
 	Use:   "file-system-summary",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "The file-system-summary command summarizes the way your project is structured on the file system.",
+	Long: `The file-system-summary command provides some summary statistics about the way 
+your project is structured on the file system.
+For the full details refer to the documentation, some examples of provided metrics are:
+- number of solutions
+- number of projects
+- number of files
+- number of lines
+- average number of files per directory
+- ... .`,
 	Run: func(cmd *cobra.Command, args []string) {
-		// TODO: Work your own magic here
 		fmt.Println("file-system-summary called")
 	},
 }
 
 func init() {
 	showCmd.AddCommand(fileSystemSummaryCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// file-system-summaryCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// file-system-summaryCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-
 }
