@@ -32,10 +32,6 @@ package main
 
 import "github.com/basbossink/psiw/cmd"
 
-//var VersionString, RevString string
-
 func main() {
-	//	fmt.Println(VersionString)
-	//	fmt.Println(RevString)
 	cmd.Execute()
 }

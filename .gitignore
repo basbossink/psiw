@@ -24,5 +24,4 @@ _testmain.go
 *.test
 *.prof
 
-# cli-unit
-.fli-unit
+main

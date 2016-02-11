@@ -37,34 +37,31 @@ import (
 )
 
 var (
-	versionString string
-	revString     string
+	version    string
+	commitHash string
+	showHash   bool
 )
 
 // versionCmd represents the version command
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Show version information about psiw.",
-	Long: `Show version information about psiw, 
+	Short: "Show the version information of psiw.",
+	Long: `Show the version information of psiw, 
 use this if you want to know with which version of psiw certain 
 information was retrieved.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Project Structure Improvement Workbench Version",
-			versionString)
+			version)
+		if showHash {
+			fmt.Println("Git commit hash:", commitHash)
+		}
 	},
 }
 
 func init() {
 	RootCmd.AddCommand(versionCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// versionCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// versionCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-
+	versionCmd.Flags().BoolVarP(&showHash, "verbose", "v", false,
+		"Additionally show the commit hash for this version.")
+	versionCmd.Flags().BoolVarP(&showHash, "commit-hash", "c", false,
+		"Additionally show the commit hash for this version.")
 }
